@@ -69,7 +69,14 @@ export const useTodoStore = defineStore("todoStore", {
 
       if (todoIndex !== -1) {
         this.todoList.splice(todoIndex, 1);
+        setItem<TodoItem[]>("todoList", this.todoList);
       }
+    },
+    moveTodo(beDraggedItemIndex: number, inDropZoneItemIndex: number) {
+      [this.todoList[inDropZoneItemIndex], this.todoList[beDraggedItemIndex]] =
+        [this.todoList[beDraggedItemIndex], this.todoList[inDropZoneItemIndex]];
+
+      setItem<TodoItem[]>("todoList", this.todoList);
     },
   },
 });

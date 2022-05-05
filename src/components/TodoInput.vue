@@ -1,11 +1,13 @@
 <template>
-  <div class="flex items-center gap-6 rounded-md bg-white py-3 px-4 shadow-sm">
+  <div
+    class="flex items-center gap-6 rounded-md bg-white py-3 px-4 shadow-sm dark:bg-dark-very-dark-blue"
+  >
     <TodoCheckbox v-model="isChecked" />
     <input
       v-model="enteredValue"
       type="text"
       placeholder="Create a new todo..."
-      class="w-full py-2 text-xl placeholder:text-light-dark-gray-blue focus:outline-none"
+      class="w-full bg-inherit py-2 text-xl placeholder:text-light-dark-gray-blue focus:outline-none dark:placeholder:text-dark-light-gray-blue"
       @keyup.enter="addTodoItem"
     />
   </div>

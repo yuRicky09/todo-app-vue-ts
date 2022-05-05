@@ -9,7 +9,3 @@ export const setItem = <T>(itemName: string, item: T): void => {
   const formattedItem = JSON.stringify(item);
   localStorage.setItem(itemName, formattedItem);
 };
-
-export const removeItem = (itemName: string): void => {
-  localStorage.removeItem(itemName);
-};

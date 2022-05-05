@@ -1,6 +1,6 @@
 <template>
   <button
-    class="hover:text-zinc-500"
+    class="hover:text-zinc-500 dark:hover:text-dark-light-gray-blue-hover"
     :class="{ 'text-bright-blue': todoStore.filterType === text }"
     @click="todoStore.filterType = text"
   >

@@ -1,5 +1,9 @@
 <template>
-  <li class="group relative flex items-center gap-6 rounded-md py-3 px-4">
+  <li
+    class="group relative flex items-center gap-6 py-3 px-4"
+    draggable="true"
+    @dragstart="handleDragStart"
+  >
     <TodoCheckbox v-model="isChecked" />
     <p
       class="overflow-x-auto text-lg"
@@ -35,6 +39,14 @@ function deleteTodo() {
 
   if (needDelete) {
     todoStore.deleteTodo(props.todoItem.id);
+  }
+}
+
+function handleDragStart($event: DragEvent) {
+  const id = props.todoItem.id;
+
+  if ($event.dataTransfer) {
+    $event.dataTransfer.setData("id", id);
   }
 }
 
